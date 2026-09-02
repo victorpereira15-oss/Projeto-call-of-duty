@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warzone Tactical Ops & Meta Loadouts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra Superior de Acessibilidade e Estilo HUD -->
+  <div class="top-bar">
+    <div class="theme-selector">
+      <span>COR DO HUD:</span>
+      <button class="color-btn" data-color="#00ff66" style="background:#00ff66;"></button>
+      <button class="color-btn" data-color="#ff6600" style="background:#ff6600;"></button>
+      <button class="color-btn" data-color="#00d2ff" style="background:#00d2ff;"></button>
+    </div>
+    <div class="accessibility-controls">
+      <button id="btnAumentarFonte" title="Aumentar Fonte">A+</button>
+      <button id="btnDiminuirFonte" title="Diminuir Fonte">A-</button>
+      <button id="btnTema" title="Alternar Modo Visão Noturna">Visão Noturna</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Cabeçalho Principal -->
+    <header class="hero">
+      <span class="tag">WARZONE META & METRICS HQ</span>
+      <h1>CALL OF DUTY: WARZONE</h1>
+      <p>ESTRUTURA DE DADOS, SIMULADORES DE TTK E ANÁLISE DE ESTATÍSTICAS EM TEMPO REAL.</p>
+      
+      <div class="image-wrapper">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80" alt="Setup Gamer de Alta Performance">
+      </div>
+      <span class="image-credits">Foto por Unsplash / Gaming Station Setup</span>
+    </header>
+
+    <!-- Cards Comparativos: Dicas Rápidas -->
+    <section class="card-grid">
+      <div class="card card-warning">
+        <h3> Erros Graves no Warzone</h3>
+        <ul>
+          <li><strong>Gastar Placas sem Cobertura:</strong> Ficar exposto no campo aberto ao aplicar blindagem.</li>
+          <li><strong>Ignorar o Rotação do Gás:</strong> Mover-se muito tarde e ser encurralado na tempestade.</li>
+          <li><strong>Atirar sem Silenciador:</strong> Revelar sua posição exata no minimapa inimigo.</li>
+        </ul>
+      </div>
+      <div class="card card-success">
+        <h3> Estratégias de Vitória</h3>
+        <ul>
+          <li><strong>Posicionamento Elevado:</strong> Garanta o *high ground* para dominar o campo de visão.</li>
+          <li><strong>Comunicação Clara:</strong> Avise marcas de ping e direções cardeais com precisão.</li>
+          <li><strong>Uso de VANT/UAV:</strong> Ative radar quando a área final estiver compacta.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Simulador 1: Calculadora de Performance (K/D & Winrate) -->
+    <section class="game-card">
+      <h2> Simulador 1: Calculadora de Performance (K/D Ratio)</h2>
+      <p>Descubra suas métricas reais de combate para acompanhar sua evolução:</p>
+      
+      <div class="input-group">
+        <div class="input-wrapper">
+          <input type="number" id="killsInput" placeholder="Total de Kills" min="0">
+          <input type="number" id="deathsInput" placeholder="Total de Mortes" min="0">
+          <input type="number" id="winsInput" placeholder="Total de Vitórias" min="0">
+          <button id="btnCalcularStats" class="btn-neon">ANALISAR PERFIL</button>
+        </div>
+      </div>
+
+      <div id="resultadoStats" class="result-box hidden">
+        <h3>⚡ Diagnóstico de Operador:</h3>
+        <p id="textoStats"></p>
+      </div>
+    </section>
+
+    <!-- Simulador 2: Calculadora de TTK (Time-To-Kill) Interativa -->
+    <section class="game-card">
+      <h2> Simulador 2: Analisador de TTK por Arma e Distância</h2>
+      <p>Simule o tempo necessário para eliminar um inimigo com 300 de HP (Vida + Placas):</p>
+      
+      <div class="input-group">
+        <div class="input-wrapper">
+          <select id="weaponSelect" class="custom-select">
+            <option value="SVA 545">SVA 545 (Fuzil de Assalto)</option>
+            <option value="RAM-7">RAM-7 (Fuzil de Assalto)</option>
+            <option value="HRM-9">HRM-9 (Submetralhadora)</option>
+            <option value="KATT-AMR">KATT-AMR (Fuzil de Precisão)</option>
+          </select>
+          
+          <input type="number" id="distanceInput" placeholder="Distância (metros)" min="1" max="150" value="25">
+          <button id="btnCalcularTTK" class="btn-neon">CALCULAR TTK</button>
+        </div>
+      </div>
+
+      <div id="resultadoTTK" class="result-box hidden">
+        <h3>⚡ Análise do TTK:</h3>
+        <p id="textoTTK"></p>
+      </div>
+    </section>
+
+    <!-- Tabela de Armas do Meta -->
+    <section class="game-card">
+      <h2> Estatísticas do Meta Atual de Armas</h2>
+      <p>Comparativo de danos, cadência e alcances ideais de combate:</p>
+      <div class="table-responsive">
+        <table class="gamer-table">
+          <thead>
+            <tr>
+              <th>Arma</th>
+              <th>Classe</th>
+              <th>Alcance Efetivo</th>
+              <th>Pontos Fortes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>RAM-7</strong></td>
+              <td>Fuzil de Assalto</td>
+              <td>0 - 45m</td>
+              <td>Altíssima cadência e Dano por Segundo (DPS) elevado.</td>
+            </tr>
+            <tr>
+              <td><strong>HRM-9</strong></td>
+              <td>Submetralhadora (SMG)</td>
+              <td>0 - 15m</td>
+              <td>Mobilidade insana, ideal para combates em prédios.</td>
+            </tr>
+            <tr>
+              <td><strong>KATT-AMR</strong></td>
+              <td>Sniper (Precisão)</td>
+              <td>100m+</td>
+              <td>Hitkill na cabeça mesmo com 3 placas inteiras.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Seção de Conclusão -->
+    <section class="game-card conclusion-card">
+      <h2> Domine o Al-Mazrah, Urzikstan e Rebirth Island!</h2>
+      <p>Acompanhar a evolução das métricas de armas e entender o balanceamento de jogo é a chave para a vitória contínua no Warzone.</p>
+      <div class="cta-box">
+        <a href="https://callofduty.com/warzone" target="_blank" rel="noopener noreferrer" class="btn-neon link-saibamais">
+          ACESSAR SITE OFICIAL DO WARZONE
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
